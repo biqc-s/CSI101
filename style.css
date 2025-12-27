@@ -62,9 +62,9 @@ header {
     background-color: var(--card-color);
     box-shadow: var(--shadow);
     padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: relative;
+    /* top: 0; removed to stop sticking */
+    /* z-index: 100; kept for shadow layering if needed, but not strictly necessary for relative */
 }
 
 .header-container {
