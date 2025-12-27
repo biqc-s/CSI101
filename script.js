@@ -710,7 +710,7 @@ function renderGuide() {
 
     html += `</div>
     <style>
-        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
         .guide-item { display: flex; flex-direction: column; gap: 0.8rem; border-left: 4px solid var(--primary-color); }
         .gi-header { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .gi-id { background: var(--primary-color); color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-family: monospace; }
