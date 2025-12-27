@@ -501,9 +501,13 @@ footer {
     }
 
     .nav-tabs {
-        justify-content: flex-start;
-        /* Allow scrolling from start */
-        padding-bottom: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* Wrap buttons to next line */
+        gap: 8px;
+        /* Slightly smaller gap */
+        overflow-x: visible;
+        /* Remove scroll */
     }
 
     .logo h1 {
