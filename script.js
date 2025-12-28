@@ -622,6 +622,7 @@ function renderTab(tabName) {
     switch (tabName) {
         case 'home': renderHome(); break;
         case 'guide': renderGuide(); break;
+        case 'terms': renderTerms(); break;
         case 'mock-exam': renderExamStart(); break;
         case 'q-bank': renderQuestionBank(); break;
         case 'stats': renderStats(); break;
@@ -659,6 +660,9 @@ function renderHome() {
                 </button>
                 <button class="action-btn" onclick="document.querySelector('[data-tab=guide]').click()">
                     <span>📖</span> الدليل الشامل للقوانين والحاسبة
+                </button>
+                <button class="action-btn" onclick="document.querySelector('[data-tab=terms]').click()">
+                    <span>📑</span> المصطلحات والمقارنات
                 </button>
             </div>
         </section>
@@ -1070,3 +1074,620 @@ function renderQuestionBank() {
 function loadProgress() {
     // Check localstorage
 }
+
+
+function renderTerms() {
+    mainContent.innerHTML = `
+        <div class="card">
+            <h2>📑 دليل المصطلحات والمقارنات</h2>
+            <p>مراجعة شاملة لجميع المصطلحات، القوانين، والمقارنات في المقرر.</p>
+        </div>
+
+        <!-- Week 1-2: Motion -->
+        <div class="card">
+            <h3>📌 Week 1-2: Motion in One Dimension (الحركة في بُعد واحد)</h3>
+            
+            <div class="formula-category">
+                <h4>🔹 المصطلحات الأساسية:</h4>
+                <ul style="list-style:none; padding:0; line-height:1.8;">
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Speed:</strong> Scalar quantity (Total distance / Total time)</div>
+                        <div class="ar-text"><strong>السرعة:</strong> كمية قياسية (المسافة الكلية / الزمن الكلي)</div>
+                    </li>
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Velocity:</strong> Vector quantity (Displacement / Time)</div>
+                        <div class="ar-text"><strong>السرعة المتجهة:</strong> كمية متجهة (إزاحة / زمن)</div>
+                    </li>
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Average Speed:</strong> Total distance / Total time</div>
+                        <div class="ar-text"><strong>متوسط السرعة:</strong> المسافة الكلية / الزمن الكلي</div>
+                    </li>
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Average Velocity:</strong> Displacement / Total time = (x₂ - x₁) / t</div>
+                        <div class="ar-text"><strong>متوسط السرعة المتجهة:</strong> الإزاحة / الزمن</div>
+                    </li>
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Instantaneous Velocity:</strong> Velocity at a specific instant (dx/dt)</div>
+                        <div class="ar-text"><strong>السرعة اللحظية:</strong> السرعة عند لحظة معينة</div>
+                    </li>
+                    <li class="term-item">
+                        <div class="en-text ltr"><strong>Acceleration:</strong> Rate of change of velocity ((v₂ - v₁) / t)</div>
+                        <div class="ar-text"><strong>التسارع:</strong> معدل تغير السرعة بالنسبة للزمن</div>
+                    </li>
+                </ul>
+            </div>
+
+            <h4>🔹 مقارنات هامة:</h4>
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>المفهوم (Concept)</th>
+                            <th class="ltr">Distance</th>
+                            <th class="ltr">Displacement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الترجمة</td>
+                            <td>المسافة</td>
+                            <td>الإزاحة</td>
+                        </tr>
+                        <tr>
+                            <td>النوع (Type)</td>
+                            <td class="ltr">Scalar (Quantity)</td>
+                            <td class="ltr">Vector (Quantity)</td>
+                        </tr>
+                        <tr>
+                            <td>الوصف</td>
+                            <td>طول المسار الكلي</td>
+                            <td>أقصر مسافة بين البداية والنهاية</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>المفهوم (Concept)</th>
+                            <th class="ltr">Speed</th>
+                            <th class="ltr">Velocity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الترجمة</td>
+                            <td>السرعة</td>
+                            <td>السرعة المتجهة</td>
+                        </tr>
+                        <tr>
+                            <td>النوع (Type)</td>
+                            <td class="ltr">Scalar</td>
+                            <td class="ltr">Vector</td>
+                        </tr>
+                        <tr>
+                            <td>القانون (Formula)</td>
+                            <td class="ltr">Distance / Time</td>
+                            <td class="ltr">Displacement / Time</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box" style="background:#fff3cd; padding:10px; border-radius:5px; margin:1rem 0;">
+                <div style="margin-bottom:5px;"><strong>⚠️ Note:</strong></div>
+                <div class="term-item">
+                    <div class="ltr en-text"><strong>Negative Acceleration:</strong> Acceleration in negative direction.</div>
+                    <div class="ar-text">تسارع في الاتجاه السالب.</div>
+                </div>
+                <div class="term-item">
+                    <div class="ltr en-text"><strong>Deceleration:</strong> Acceleration opposite to velocity.</div>
+                    <div class="ar-text">تباطؤ (التسارع عكس اتجاه الحركة).</div>
+                </div>
+            </div>
+
+            <h4>📝 معادلات الحركة بتسارع ثابت (Constant Acceleration Eqs):</h4>
+            <div style="background:#333; color:#0f0; padding:15px; border-radius:8px; direction:ltr; font-family:monospace; text-align:center; font-size:1.1rem;">
+                v = v₀ + at<br>
+                Δx = v₀t + ½at²<br>
+                v² = v₀² + 2aΔx<br>
+                v_avg = (v₀ + v) / 2
+            </div>
+
+            <h4 style="margin-top:1.5rem;">⬇️ السقوط الحر (Free Fall):</h4>
+            <ul style="list-style:none; padding:0;">
+                <li class="term-item">
+                    <div class="ltr en-text"><strong>g = 9.8 m/s²</strong> (Always downwards)</div>
+                    <div>تسارع الجاذبية دائماً للأسفل.</div>
+                </li>
+                <li class="term-item">
+                    <div class="ltr en-text">At max height: <strong>v = 0</strong></div>
+                    <div>عند أقصى ارتفاع تكون السرعة صفراً.</div>
+                </li>
+                 <li class="term-item">
+                    <div class="ltr en-text">Going up/down: <strong>a = -g</strong></div>
+                    <div>التسارع دائماً سالب (-g) سواء صعوداً أو هبوطاً.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Week 3: Vectors -->
+        <div class="card">
+            <h3>📌 Week 3: Vectors (المتجهات)</h3>
+            
+             <div class="formula-category">
+                <div class="term-item">
+                    <div class="ltr en-text"><strong>Vector:</strong> Has magnitude AND direction.</div>
+                    <div class="ar-text"><strong>المتجه:</strong> له مقدار واتجاه.</div>
+                </div>
+                <div class="term-item">
+                    <div class="ltr en-text"><strong>Scalar:</strong> Has magnitude ONLY.</div>
+                    <div class="ar-text"><strong>الكمية القياسية:</strong> لها مقدار فقط.</div>
+                </div>
+            </div>
+
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Vector Quantities</th>
+                            <th class="ltr">Scalar Quantities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Displacement (الإزاحة)</td>
+                            <td>Distance (المسافة)</td>
+                        </tr>
+                        <tr>
+                            <td>Velocity (السرعة المتجهة)</td>
+                            <td>Speed (السرعة)</td>
+                        </tr>
+                        <tr>
+                            <td>Force (القوة)</td>
+                            <td>Mass (الكتلة)</td>
+                        </tr>
+                         <tr>
+                            <td>Momentum (الزخم)</td>
+                            <td>Time (الزمن) / Energy (الطاقة)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>🔹 Unit Vectors & Components (مركبات المتجه):</h4>
+            <div class="formula-item">
+                 <div class="f-eq ltr">î, ĵ, k̂ (Unit vectors, magnitude = 1)</div>
+            </div>
+            <div class="formula-item">
+                <div class="f-name ltr">Components</div>
+                <div class="f-eq ltr">Aₓ = A cos θ , Aᵧ = A sin θ</div>
+            </div>
+            <div class="formula-item">
+                 <div class="f-name ltr">Magnitude & Angle</div>
+                 <div class="f-eq ltr">|A| = √(Aₓ² + Aᵧ²), θ = tan⁻¹(Aᵧ/Aₓ)</div>
+            </div>
+
+             <h4>🔹 Angle Conversion (تحويل الزوايا):</h4>
+            <div class="formula-item">
+                 <div class="f-eq ltr">Degrees = Radians × (180°/π)</div>
+                 <div class="f-eq ltr">Radians = Degrees × (π/180°)</div>
+            </div>
+
+            <h4>🔹 Vector Operations (العمليات):</h4>
+            <div class="formula-item">
+                <div class="f-name ltr">Dot Product (Scalar Product)</div>
+                <div class="f-eq ltr">A⃗ · B⃗ = AB cos φ = AₓBₓ + AᵧBᵧ</div>
+                <div class="f-desc">النتيجة رقم قياسي (Scalar). Condition for perpendicular: Dot product = 0.</div>
+            </div>
+            <div class="formula-item">
+                <div class="f-name ltr">Cross Product (Vector Product)</div>
+                <div class="f-eq ltr">A⃗ × B⃗ = AB sin φ (n̂)</div>
+                <div class="f-desc">النتيجة متجه (Vector). A×B ≠ B×A.</div>
+            </div>
+        </div>
+
+        <!-- Week 4: Motion in 2D -->
+        <div class="card">
+            <h3>📌 Week 4: Motion in Two Dimensions</h3>
+            
+            <h4>🚀 المقذوفات (Projectile Motion):</h4>
+            <ul style="list-style:disc; padding-right:20px;">
+                <li>
+                    <span class="ltr en-text" style="display:inline-block; font-weight:bold;">Horizontal:</span> 
+                    <span>No acceleration (a=0), vₓ = v₀ cos θ = constant.</span>
+                </li>
+                <li>
+                    <span class="ltr en-text" style="display:inline-block; font-weight:bold;">Vertical:</span> 
+                    <span>Free fall (a = -g), vᵧ = v₀ sin θ - gt.</span>
+                </li>
+            </ul>
+            <div style="background:#e3f2fd; padding:10px; border-radius:5px; margin:10px 0;">
+                <div class="ltr en-text"><strong>Max Range:</strong> at θ = 45°.</div>
+                <div class="ltr en-text"><strong>Range Eq:</strong> R = (v₀² sin 2θ) / g</div>
+                <div class="ltr en-text"><strong>Max Height:</strong> H = (v₀² sin² θ) / (2g)</div>
+            </div>
+
+            <h4>🔄 الحركة الدائرية المنتظمة (Uniform Circular):</h4>
+            <ul style="list-style:none; padding:0;">
+                 <li class="term-item">
+                    <div class="ltr en-text"><strong>Centripetal Acceleration:</strong> aᶜ = v² / r</div>
+                    <div>تسارع مركزي (اتجاهه نحو المركز).</div>
+                </li>
+                <li class="term-item">
+                    <div class="ltr en-text"><strong>Period (T):</strong> T = 2πr / v</div>
+                    <div>الزمن الدوري.</div>
+                </li>
+                 <li class="term-item">
+                    <div class="ltr en-text"><strong>Angular Speed:</strong> ω = 2π / T = v / r (rad/s)</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Week 5-6: Newton's Laws -->
+        <div class="card">
+            <h3>📌 Week 5-6: Newton's Laws (قوانين نيوتن)</h3>
+            
+            <div class="formula-category">
+                <div class="term-item">
+                    <div class="ltr en-text"><strong>1st Law (Inertia):</strong> Object at rest stays at rest... UNLESS acted upon by external force.</div>
+                    <div>قانون القصور الذاتي.</div>
+                </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>2nd Law:</strong> F⃗ = ma⃗</div>
+                    <div>القوة (Newton) = الكتلة (kg) × التسارع (m/s²).</div>
+                </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>3rd Law:</strong> F₁₂ = -F₂₁</div>
+                    <div>لكل فعل رد فعل مساوٍ له في المقدار ومعاكس في الاتجاه (Action-Reaction Pair).</div>
+                </div>
+            </div>
+
+             <h4>🔹 Types of Forces (أنواع القوى):</h4>
+             <ul style="list-style:none; padding:0;">
+                <li class="term-item">
+                    <div class="ltr en-text"><strong>Weight (W):</strong> W = mg (Vector, varies with g).</div>
+                </li>
+                 <li class="term-item">
+                    <div class="ltr en-text"><strong>Normal Force (N):</strong> Perpendicular to surface.</div>
+                </li>
+                 <li class="term-item">
+                    <div class="ltr en-text"><strong>Tension (T):</strong> Force in strings/ropes.</div>
+                </li>
+            </ul>
+
+            <h4>⚖️ مقارنة: الكتلة vs الوزن</h4>
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Mass</th>
+                            <th class="ltr">Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الكتلة</td>
+                            <td>الوزن</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">Scalar (kg)</td>
+                            <td class="ltr">Vector (N)</td>
+                        </tr>
+                        <tr>
+                            <td>Constant anywhere</td>
+                            <td>Changes with gravity</td>
+                        </tr>
+                         <tr>
+                            <td>Property of matter</td>
+                            <td>Force due to gravity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>🚦 الاحتكاك (Friction):</h4>
+             <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Static Friction (ساكن)</th>
+                            <th class="ltr">Kinetic Friction (حركي)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ltr">fₛ ≤ μₛN</td>
+                            <td class="ltr">fₖ = μₖN</td>
+                        </tr>
+                        <tr>
+                            <td>Before motion (Preventing)</td>
+                            <td>During motion</td>
+                        </tr>
+                         <tr>
+                            <td class="ltr">μₛ > μₖ (usually)</td>
+                            <td class="ltr">Smaller than static</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Week 7: Work and Energy -->
+        <div class="card">
+            <h3>📌 Week 7: Work & Energy (الشغل والطاقة)</h3>
+            
+            <div class="formula-category">
+                <div class="f-eq ltr">Work W = F · d · cos θ</div>
+                 <div class="f-desc ltr">Unit: Joule (J). Scalar.</div>
+                <ul style="list-style:none; padding:0;">
+                    <li class="ltr en-text">θ = 0° → Max Positive Work (Fd)</li>
+                    <li class="ltr en-text">θ = 90° → Zero Work (0)</li>
+                    <li class="ltr en-text">θ = 180° → Negative Work (-Fd)</li>
+                </ul>
+            </div>
+
+             <div class="formula-category">
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Kinetic Energy:</strong> K = ½mv²</div>
+                 </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Potential Energy:</strong> U_g = mgy</div>
+                 </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Work-Energy Theorem:</strong> W_net = ΔK = K_f - K_i</div>
+                 </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Conservation (Isolated):</strong> K_i + U_i = K_f + U_f</div>
+                 </div>
+            </div>
+            
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Conservative Forces</th>
+                            <th class="ltr">Non-Conservative</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>قوى محافظة</td>
+                            <td>قوى غير محافظة</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">Work independent of path</td>
+                            <td class="ltr">Work depends on path</td>
+                        </tr>
+                         <tr>
+                            <td class="ltr">Round trip work = 0</td>
+                            <td class="ltr">Round trip work ≠ 0</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">Gravity, Spring</td>
+                            <td class="ltr">Friction, Air resistance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Week 9-10: Momentum -->
+        <div class="card">
+            <h3>📌 Week 9-10: Momentum & Collisions (الزخم والتصادمات)</h3>
+            
+            <div class="term-item">
+                <div class="ltr en-text"><strong>Linear Momentum:</strong> p⃗ = mv⃗ (kg·m/s, Vector)</div>
+            </div>
+             <div class="term-item">
+                <div class="ltr en-text"><strong>Newton's 2nd (Alt):</strong> F⃗ = dp⃗/dt</div>
+            </div>
+            <div class="term-item">
+                <div class="ltr en-text"><strong>Impulse:</strong> J⃗ = F⃗Δt = Δp⃗ (N·s)</div>
+            </div>
+             <div class="term-item">
+                <div class="ltr en-text"><strong>Conservation:</strong> p⃗_total = constant (Isolated System)</div>
+            </div>
+
+            <h4>💥 أنواع التصادمات (Collisions):</h4>
+            <div class="comparison-container">
+                 <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Type</th>
+                            <th class="ltr">Momentum</th>
+                            <th class="ltr">Kinetic Energy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ltr">Elastic (مرن)</td>
+                            <td class="ltr">Conserved ✅</td>
+                            <td class="ltr">Conserved ✅</td>
+                        </tr>
+                         <tr>
+                            <td class="ltr">Inelastic (غير مرن)</td>
+                            <td class="ltr">Conserved ✅</td>
+                            <td class="ltr">Not Conserved ❌</td>
+                        </tr>
+                         <tr>
+                            <td class="ltr">Perfectly Inelastic</td>
+                            <td class="ltr">Conserved ✅</td>
+                            <td class="ltr">Not Conserved (Stick)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+             <h4>⚖️ Center of Mass (مركز الكتلة):</h4>
+            <div class="formula-item">
+                <div class="f-eq ltr">x_cm = (m₁x₁ + m₂x₂) / (m₁ + m₂)</div>
+            </div>
+        </div>
+
+        <!-- Week 11: Rotation -->
+        <div class="card">
+            <h3>📌 Week 11: Rotational Motion (الحركة الدورانية)</h3>
+            
+             <div class="formula-category">
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Torque (τ):</strong> τ = r F sin θ (N·m)</div>
+                     <div>العزم (كمية متجهة). Right-Hand Rule applies.</div>
+                 </div>
+                  <div class="term-item">
+                    <div class="ltr en-text"><strong>Newton's 2nd Law (Rot):</strong> Στ = Iα</div>
+                 </div>
+                 <div class="term-item">
+                    <div class="ltr en-text"><strong>Moment of Inertia (I):</strong> I = Σmr² (kg·m²)</div>
+                    <div>عزم القصور الذاتي (مقاومة الجسم للدوران).</div>
+                 </div>
+             </div>
+
+             <h4>🔹 Rotational Kinematics (معادلات الحركة الدورانية):</h4>
+             <div class="f-eq ltr">
+                ω = ω₀ + αt<br>
+                θ = ω₀t + ½αt²<br>
+                ω² = ω₀² + 2αθ
+             </div>
+
+            <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="ltr">Linear</th>
+                            <th class="ltr">Rotational</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ltr">x (Pos)</td>
+                            <td class="ltr">θ (Angle)</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">v (Velocity)</td>
+                            <td class="ltr">ω (Ang. Velocity)</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">a (Accel)</td>
+                            <td class="ltr">α (Ang. Accel)</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">m (Mass)</td>
+                            <td class="ltr">I (Inertia)</td>
+                        </tr>
+                         <tr>
+                            <td class="ltr">F (Force)</td>
+                            <td class="ltr">τ (Torque)</td>
+                        </tr>
+                        <tr>
+                            <td class="ltr">p = mv</td>
+                            <td class="ltr">L = Iω</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+             <div class="highlight-box" style="margin-top:10px; font-size:0.9rem;">
+                <div class="ltr en-text">v = rω  |  a_t = rα  |  a_c = rω²</div>
+             </div>
+        </div>
+
+        <!-- Week 12-14: Electrostatics -->
+        <div class="card">
+            <h3>📌 Week 12-14: Electrostatics (الكهرباء السكونية)</h3>
+            
+            <ul style="list-style:none; padding:0;">
+                <li class="term-item">
+                    <div class="ltr en-text"><strong>Like charges REPEL, Unlike charges ATTRACT.</strong></div>
+                    <div>الشحنات المتشابهة تتنافر، والمختلفة تتجاذب.</div>
+                </li>
+                 <li class="term-item">
+                    <div class="ltr en-text"><strong>Charge is Conserved & Quantized.</strong></div>
+                </li>
+                <li class="term-item">
+                     <div class="ltr en-text"><strong>Electric Field Lines:</strong> Out of Positive, Into Negative.</div>
+                     <div>خطوط المجال: تخرج من الموجب، تدخل في السالب، لا تتقاطع.</div>
+                </li>
+            </ul>
+
+            <div class="formula-item">
+                <div class="f-name ltr">Coulomb's Law</div>
+                <div class="f-eq ltr">F = k |q₁q₂| / r²</div>
+            </div>
+
+            <div class="formula-item">
+                <div class="f-name ltr">Electric Field</div>
+                <div class="f-eq ltr">E⃗ = F⃗/q₀ = k|q|/r²</div>
+                 <div class="f-desc ltr">Force on charge in field: F⃗ = qE⃗</div>
+            </div>
+
+             <h4>🔹 Charge Distributions (توزيعات الشحنة):</h4>
+             <div class="formula-item">
+                <div class="ltr en-text">Linear: λ = Q/L | Surface: σ = Q/A | Volume: ρ = Q/V</div>
+            </div>
+
+            <div class="formula-item">
+                <div class="f-name ltr">Electric Flux & Gauss's Law</div>
+                <div class="f-eq ltr">Φ = EA cos θ = Q_enclosed / ε₀</div>
+                <div class="f-desc">Use Gauss for Symmetry.</div>
+            </div>
+        </div>
+
+        <!-- Key Comparisons Summary -->
+        <div class="card">
+             <h3>🔑 مقارنات شاملة مهمة (Key Comparisons)</h3>
+             
+             <div class="comparison-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th colspan="3">1. Scalar vs Vector</th></tr>
+                    </thead>
+                     <tbody>
+                        <tr><td>Direction</td><td>Vector: ✓</td><td>Scalar: ✗</td></tr>
+                         <tr><td>Examples</td><td class="ltr">Velocity, Force</td><td class="ltr">Mass, Energy</td></tr>
+                    </tbody>
+                </table>
+                 <table class="comparison-table">
+                    <thead>
+                        <tr><th colspan="3">2. Work vs Energy vs Power</th></tr>
+                    </thead>
+                     <tbody>
+                        <tr><td class="ltr">Work</td><td class="ltr">W = Fd</td><td class="ltr">Unit: Joule</td></tr>
+                        <tr><td class="ltr">Energy</td><td class="ltr">Capacity to do work</td><td class="ltr">Unit: Joule</td></tr>
+                        <tr><td class="ltr">Power</td><td class="ltr">Rate (P = W/t)</td><td class="ltr">Unit: Watt</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Constants -->
+        <div class="card">
+             <h3>📝 Important Constants (ثوابت هامة)</h3>
+             <div class="constants-box">
+                g = 9.8 m/s²<br>
+                k = 9 × 10⁹ N·m²/C²<br>
+                e (charge) = 1.6 × 10⁻¹⁹ C<br>
+                ε₀ = 8.85 × 10⁻¹² C²/(N·m²)
+             </div>
+        </div>
+        
+        <style>
+            .term-item {
+                border-bottom: 1px solid #eee;
+                padding: 10px 0;
+                margin-bottom: 5px;
+            }
+            .term-item:last-child { border-bottom: none; }
+            .comparison-container {
+                overflow-x: auto;
+            }
+            .comparison-table th.ltr, .comparison-table td.ltr {
+                direction: ltr;
+                text-align: left;
+            }
+        </style>
+    `;
+    window.scrollTo(0, 0);
+}
+
